@@ -1,4 +1,4 @@
-CREATE DATABASE pern_to_do;
+CREATE DATABASE pern;
 
 CREATE TABLE todo(
     todo_id SERIAL PRIMARY KEY,
