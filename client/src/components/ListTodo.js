@@ -1,7 +1,22 @@
 import React,{Fragment,useState,useEffect} from "react"
 
+import UpdateTodo from "./UpdateTodo"
+
  const ListTodo=()=>{
     const[todos,setTodos]=useState([])
+// delete function that we need to delete a todo item
+
+    const deleteTodo=async(id)=>{
+        try {
+         const deleteTodo=await fetch(`http://localhost:5000/todos/${id}`,{
+            method:"DELETE"
+         })
+            setTodos(todos.filter(todo=>todo.todo_id !== id ))
+        } catch (err) {
+            console.error(err.message)
+        }
+    }
+
     const getTodos = async() => {
         try {
 
@@ -24,7 +39,7 @@ import React,{Fragment,useState,useEffect} from "react"
                     <tr>
                         <th>Description</th>
                         <th>Edit</th>
-                        <th>Delte</th>
+                        <th>Deltete</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -37,11 +52,11 @@ import React,{Fragment,useState,useEffect} from "react"
                         
                             
                         */}
-                        {todos.map((todo,index)=>(
-                            <tr key={index}>
-                                <td>todo.description</td>
-                                <td>Edit</td>
-                                <td>Delete</td>
+                        {todos.map( todo =>(
+                            <tr key={todo.todo_id}>
+                                <td>{todo.description}</td>
+                                <td><UpdateTodo todo={todo}/></td>
+                                <td><button className="btn btn-danger" onClick={()=>deleteTodo(todo.todo_id)}>Deltete</button></td>
                             </tr>
                         ))}
                     </tbody>
