@@ -2,17 +2,18 @@
 
 ## Description
 a fully functional example project written in javascript showing how to :
-*Create a REST API using Nodjs 
-*build the frontend with Reactjs 
-*Manage the data using Postgres as a Databse
+.Create a REST API using Nodjs 
+.build the frontend with Reactjs 
+.Manage the data using Postgres as a Databse
 
 ##The diagram that I use
-![This is an image](https://myoctocat.com/assets/images/base-octocat.svg)
+![todo_app drawio](https://user-images.githubusercontent.com/76825219/186231917-64f21bde-87f4-437d-8f31-c3199b5cbba9.png)
 
 ##Installation
 ```
 npm install
 ```
+
 
 ##Running the app
 right here we can open two terminal to run the backend using ``` node index.js``` and run the frontend using ``` npm start ``` to run the whole application
